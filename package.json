@@ -1,0 +1,30 @@
+{
+  "name": "task-master-project",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "dependencies": {
+    "body-parser": "^1.9.1",
+    "compression": "^1.2.0",
+    "express": "^4.10.5",
+    "mongoose": "^3.8.18"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.6"
+  },
+  "scripts": {
+    "start": "node ./src/app.js",
+    "pretest": "jshint ./src",
+    "test": "echo \"Tests Complete\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laserhammer/task-master-project.git"
+  },
+  "author": "Ben Robbins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laserhammer/task-master-project/issues"
+  },
+  "homepage": "https://github.com/laserhammer/task-master-project"
+}
