@@ -5,23 +5,19 @@ var signup = function(req, res)
 {
 	// Validate body fields for the username and password
 	// Add account to the database
-	if(!req.body.username || !req.body.pass || !req.body.pass2)
+	if(!req.query.username || !req.query.pass)
 	{
 		return res.status(400).json({error: "All fields are required"});
 	}
-	if(req.body.pass !== req.body.pass2)
-	{	
-		return res.status(400).json({error: "Passwords must match"});
-	}
-	Account.AccountModel.generateHash(req.body.pass, function(salt, hash) {
+	Account.AccountModel.generateHash(req.query.pass, function(salt, hash) {
 		var accountData = {
-			username: req.body.username,
+			username: req.query.username,
 			salt: salt,
 			password: hash
 		};
 		
 		var newAccount = new Account.AccountModel(accountData);
-		console.log(newAccount.username);
+		console.log("creating account '" + newAccount.username + "'");
 		newAccount.save(function(err) {
 			if(err) 
 			{	
@@ -30,7 +26,8 @@ var signup = function(req, res)
 			}
 			
 			//req.session.account = newAccount.toAPI();
-			return res.status(200);
+			console.log("account '" + newAccount.username + "' successfully created");
+			return res.status(200).json({success: "yes"});
 		});
 	});
 };

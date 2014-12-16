@@ -10,7 +10,7 @@ var TaskSchema = new mongoose.Schema({
     },
     
     dueDate: {
-        type: Date,
+        type: Number,
     },
 	
 	important: {
@@ -52,6 +52,17 @@ TaskSchema.statics.findByOwner = function(ownerId, callback) {
     };
 
     return TaskModel.find(search).select("title dueDate important parent").exec(callback);
+};
+
+TaskSchema.statics.removeTask = function(ownerId, title,  dueDate, callback)
+{
+	var search = {
+		owner: mongoose.Types.ObjectId(ownerId),
+		title: String(title),
+		dueDate: Number(dueDate)
+	};
+	
+	TaskModel.remove(search).exec(callback);
 };
 
 

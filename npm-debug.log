@@ -2,8 +2,8 @@
 1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'start' ]
-2 info using npm@1.4.14
-3 info using node@v0.10.29
+2 info using npm@1.4.28
+3 info using node@v0.10.33
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info prestart task-master-project@0.0.0
 6 info start task-master-project@0.0.0
@@ -19,10 +19,10 @@
 10 error You can get their info via:
 10 error     npm owner ls task-master-project
 10 error There is likely additional logging output above.
-11 error System Windows_NT 6.2.9200
+11 error System Windows_NT 6.1.7601
 12 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
-13 error cwd J:\RichMediaII\task-master-project
-14 error node -v v0.10.29
-15 error npm -v 1.4.14
+13 error cwd C:\Users\Ben\Desktop\task-master-project
+14 error node -v v0.10.33
+15 error npm -v 1.4.28
 16 error code ELIFECYCLE
 17 verbose exit [ 1, true ]
